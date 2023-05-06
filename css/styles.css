@@ -31,6 +31,9 @@
 
   --anim-fast: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --anim-slow: 1250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  --header-idx:10;
+  --modal-idx:100;
 }
 
 *,
@@ -102,7 +105,7 @@ body {
 }
 /* -----------------------------------------------heder -----------------------------------------------------*/
 .header {
-  /* background-color: tomato;  */
+  z-index: var(--header-idx);
   height: 72px;
   border-bottom: 1px solid var(--color-border-hader);
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
@@ -662,7 +665,7 @@ nav {
 }
 .link-works {
   display: block;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--anim-fast);
 }
 
 .works-thumb {
@@ -732,7 +735,6 @@ nav {
 /* !!!!! modal window !!! */
 
 .backdrop {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -740,14 +742,26 @@ nav {
   height: 100%;
   background-color: rgba(221, 214, 214, 0.5);
   backdrop-filter: blur(2px);
+  z-index: var(--modal-idx);
+  /* transform: scale(1); */
+  transition-property :opacity,transform  ;
+  transition-duration: 1000ms;
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  /* transform: scale(0); */
 }
 .modal {
   position: absolute;
-  top: calc(50% - 250px);
-  left: calc(50% - 225px);
-  width: 450px;
-  height: 500px;
+  transform: translateY(-50%) translateX(-50%);
+ top: calc(50%);
+  left: calc(50%);
+  width: 408px;
+  height: 584px;
   background-color: var(--color-btn-secondary);
+
 }
 .close-modwin-btn {
   position: absolute;
@@ -759,8 +773,8 @@ nav {
   align-items: center;
   padding: 0;
 
-  top: 0;
-  right: 0;
+  top: 24px;
+  right: 24px;
   border-radius: 50%;
   border: none;
   border-color: var(--background-color-btn-close);
