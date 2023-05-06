@@ -27,6 +27,7 @@
   --background-color-social-footer-activ: #31d0aa;
   --background-color-customers: #8e8f99;
   --background-color-customers-activ: #404bbf;
+  --background-color-btn-close: #e7e9fc;
 }
 
 *,
@@ -160,12 +161,14 @@ nav {
   padding-top: 24px;
   padding-bottom: 24px;
 }
+
 .link-header.link {
   display: block;
 
   color: var(--header-color);
 }
 .link-header {
+  position: relative;
   display: block;
   text-decoration: none;
   font-weight: 500;
@@ -173,14 +176,23 @@ nav {
   line-height: 1.5; /* or 150% */
   letter-spacing: 0.02em;
 }
+.link-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+}
 .link-header:hover,
 .link-header:focus {
   color: var(--color-btn-hero-active);
 }
 
-.link.header-activ {
-  color: var(--text-color-active-link);
-  font-weight: bolder;
+.header-activ::after {
+  background-color: var(--background-color-social-activ);
 }
 /* адреса та номер телефону */
 .address {
@@ -217,7 +229,6 @@ nav {
 
   margin: 0 auto;
   background-image: linear-gradient(
-      
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
@@ -326,7 +337,7 @@ nav {
 }
 
 .about-svg {
- }
+}
 
 .about-item:not(:last-child) {
   margin-right: 24px;
@@ -480,31 +491,27 @@ nav {
 }
 .customers-item {
   width: calc((100% - 120px) / 6);
-  height: 88px; 
+  height: 88px;
   /* padding: 16px 32px; */
- }
+}
 
 .customers-link {
-
   height: 100%;
   width: 100%;
-  
+
   color: var(--background-color-customers);
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
-  
- 
+
   border: 1px solid var(--background-color-customers); /*#8e8f99; */
   border-radius: 4px;
 }
 .customers-link:hover,
-.customers-link:focus  {
-
+.customers-link:focus {
   border-color: var(--background-color-customers-activ);
   color: var(--background-color-customers-activ);
-
 }
 .customers-svg {
   fill: currentColor;
@@ -639,7 +646,6 @@ nav {
 }
 .works-item:hover,
 .works-item:focus {
-  
 }
 .link-works:hover,
 .link-works:focus {
@@ -673,4 +679,42 @@ nav {
   line-height: 24px;
   letter-spacing: 0.02em;
   color: var(--body-color); /* #434455; */
+}
+/* !!!!! modal window !!! */
+
+.backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(221, 214, 214, 0.5);
+  backdrop-filter: blur(2px);
+}
+.modal {
+  position: absolute;
+  top: calc(50% - 250px);
+  left: calc(50% - 225px);
+  width: 450px;
+  height: 500px;
+  background-color: var(--color-btn-secondary);
+}
+.close-modwin-btn {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  border: none;
+  border-color: var(--background-color-btn-close);
+}
+.close-modwin-icon {
 }
