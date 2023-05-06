@@ -26,8 +26,12 @@
   --background-color-social-activ: #404bbf;
   --background-color-social-footer-activ: #31d0aa;
   --background-color-customers: #8e8f99;
+  /* Ocean 404bbf; */
   --background-color-customers-activ: #404bbf;
+   /* ACCENT #e7e9fc */
   --background-color-btn-close: #e7e9fc;
+  /* NaviBlu#2e2f42; */
+  --background-color-btn-close-activ: #2e2f42;
 
   --anim-fast: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --anim-slow: 1250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -778,6 +782,37 @@ nav {
   border-radius: 50%;
   border: none;
   border-color: var(--background-color-btn-close);
+  /* transition: fill var(--anim-slow); */
+    transition: background-color var(--anim-slow);
+  
+}
+
+.close-modwin-btn:hover {
+   background-color: #404bbf;  /*Ocean */
+   /* transition: color var(--anim-slow); */
 }
 .close-modwin-icon {
+  fill: #2e2f42;
+  /* transition-property: fill;
+  transition-duration: 3000mc;
+  transition-timing-function: linear; */
+  animation-name:anim ;
+  animation-duration: 3000ms;
+  animation-fill-mode: ;
+
+  /* transition: fill 3000mc linear; */
+}
+.close-modwin-btn:hover > .close-modwin-icon,
+.close-modwin-btn:focus > .close-modwin-icon {
+ /* background-color: #404bbf;  Ocean */
+  fill: #e7e9fc;
+  transition-property: fill;
+  transition-duration: 3000mc;
+  transition-timing-function: linear;
+
+}
+@keyframes anim{
+  0% { fill: #49549E; }
+    
+    100% { fill: #1bce4f; }
 }
