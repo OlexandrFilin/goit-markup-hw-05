@@ -176,7 +176,7 @@ nav {
 .link-header.link {
   display: block;
 
-  color: var(--header-color);
+  color: var(--header-color); /*#2e2f42;*/
 }
 .link-header {
   position: relative;
@@ -186,6 +186,7 @@ nav {
   font-size: 16px;
   line-height: 1.5; /* or 150% */
   letter-spacing: 0.02em;
+  color: #404bbf;
   /* transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
