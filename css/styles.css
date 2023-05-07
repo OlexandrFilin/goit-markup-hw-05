@@ -764,7 +764,7 @@ nav {
 
   background-color: var(--background-color-btn-close);
 
-  border-color: var(--background-color-btn-close); /*#e7e9fc;*/
+  /*border-color: var(--background-color-btn-close); #e7e9fc;*/
 
   transition: background-color var(--anim-fast), border var(--anim-fast);
 }
