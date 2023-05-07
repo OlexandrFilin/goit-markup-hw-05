@@ -650,8 +650,8 @@ nav {
   color: var(--background-btn-primary); /*#4d5ae5  */
   background-color: var(--color-btn-primari); /* #F4F4FD */
 
-  transition: border var(--anim-fast), color var(--anim-fast),
-    background-color var(--anim-fast), box-shadow var(--anim-fast);
+  transition: color var(--anim-fast), background-color var(--anim-fast),
+    border-color var(--anim-fast), box-shadow var(--anim-fast);
 }
 
 .btn:hover,
@@ -701,9 +701,8 @@ nav {
   left: 0;
   height: 100%;
   transform: translateY(100%);
-  padding-top: 40px;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding: 40px 32px;
+
   color: var(--color-btn-primari);
   background-color: var(--background-btn-primary);
   transition: transform var(--anim-fast);
