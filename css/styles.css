@@ -628,33 +628,31 @@ nav {
   /* margin: 72px; */
   margin-bottom: 72px;
 }
-
+.btn-item {
+}
 .btn {
   padding-top: 12px;
   padding-bottom: 12px;
   padding-left: 24px;
   padding-right: 24px;
 
-  border: 1px solid var(--color-border-hader); /*#e7e9fc; */
   border-radius: 4px;
-
-  color: var(--background-btn-primary); /*#4d5ae5  */
-
-  background-color: var(--color-btn-primari); /* #F4F4FD */
 
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  /* align-items: center; */
+
   letter-spacing: 0.04em;
-  /* transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+
+  border: 1px solid var(--color-border-hader); /*#e7e9fc; */
+  color: var(--background-btn-primary); /*#4d5ae5  */
+  background-color: var(--color-btn-primari); /* #F4F4FD */
+
   transition: border var(--anim-fast), color var(--anim-fast),
     background-color var(--anim-fast), box-shadow var(--anim-fast);
 }
+
 .btn:hover,
 .btn:focus {
   border: 1px solid transparent;
@@ -697,7 +695,12 @@ nav {
 }
 
 .works-overlay-txt {
+  position: absolute;
   color: var(--color-btn-primari);
+}
+.works-overlay-txt:hover,
+.works-overlay-txt:focus {
+  transform: translateY(0);
 }
 .works-item:hover .works-overlay {
   transform: translateY(0);
@@ -771,10 +774,10 @@ nav {
   width: 408px;
   /* height: 584px; */
   min-height: 576px;
-  /* background-color: var(--color-btn-secondary); */
-  background-color: var(--backgroun-modal);
+  background-color: var(--background-color-btn-close); /*#e7e9fc;*/
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 }
 .close-modwin-btn {
@@ -797,9 +800,11 @@ nav {
   transition: background-color, border var(--anim-fast);
 }
 
-.close-modwin-btn:hover {
+.close-modwin-btn:hover,
+.close-modwin-btn:focus {
   /*background-color: #404bbf; Ocean */
   background-color: var(--background-color-btn-hero-active); /*#404bbf */
+  border: none;
   /* transition: color var(--anim-slow); */
 }
 .close-modwin-icon {
