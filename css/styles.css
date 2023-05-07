@@ -168,10 +168,6 @@ nav {
 
 .item-nav {
 }
-.link-header {
-  padding-top: 24px;
-  padding-bottom: 24px;
-}
 
 .link-header.link {
   display: block;
@@ -179,6 +175,8 @@ nav {
   color: var(--header-color); /*#2e2f42;*/
 }
 .link-header {
+  padding-top: 24px;
+  padding-bottom: 24px;
   position: relative;
   display: block;
   text-decoration: none;
