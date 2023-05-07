@@ -807,10 +807,12 @@ nav {
   border-radius: 50%;
   /* border: none; */
   border: 1px solid rgba(0, 0, 0, 0.1);
+
   background-color: var(--background-color-btn-close);
+
   border-color: var(--background-color-btn-close); /*#e7e9fc;*/
 
-  transition: background-color, border var(--anim-fast);
+  transition: background-color var(--anim-fast), border var(--anim-fast);
 }
 
 .close-modwin-btn:hover,
